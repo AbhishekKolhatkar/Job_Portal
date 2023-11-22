@@ -39,16 +39,13 @@ router.post("/update", async (req, res) => {
   }
 });
 
-
-router.get("/getallusers", async(req, res) => {
-  
+router.get("/getallusers", async (req, res) => {
   try {
-      const users = await User.find()
-      res.send(users)
+    const users = await User.find();
+    res.send(users);
   } catch (error) {
-      return res.status(400).json({ error });
+    return res.status(400).json({ error });
   }
-
 });
 
 module.exports = router;
